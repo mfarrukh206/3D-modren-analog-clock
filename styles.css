@@ -1,0 +1,110 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a1a1a;
+    font-family: 'Roboto', sans-serif;
+}
+
+.clock-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.clock {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background-color: black;
+    border: 5px solid #f5c518;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+/* Clock hands */
+.hand {
+    position: absolute;
+    width: 50%;
+    background-color: #f5c518;
+    height: 2px;
+    top: 50%;
+    transform-origin: 100%;
+    transform: rotate(90deg) translateZ(1px);
+    border-radius: 2px;
+    transition: transform 0.5s cubic-bezier(0.4, 2.3, 0.3, 1);
+}
+
+.hour {
+    height: 5px;
+    margin-left:50px;
+    background-color: #f5c518;
+    width: 33%;
+    transform: rotate(90deg) translateZ(4px);
+}
+
+.minute {
+    height: 4px;
+    margin-left:10px;
+    background-color: #f5c518;
+    width: 45%;
+    transform: rotate(90deg) translateZ(3px);
+}
+
+.second {
+    height: 2px;
+    background-color: red;
+    width: 50%;
+    box-shadow: 0px 0px 8px red;
+    transform: rotate(90deg) translateZ(2px);
+}
+
+/* 3D Animation transitions for hands */
+.hand:hover {
+    transition: transform 0.05s cubic-bezier(0.4, 2.3, 0.3, 1);
+}
+
+/* Clock Numbers - Correct Positioning */
+.number {
+    position: absolute;
+    color: #f5c518;
+    font-size: 24px;
+    font-weight: bold;
+    transform: translate(-50%, -50%);
+    text-shadow: 0px 1px 2px #000;
+}
+
+.number12 { top: 10%; left: 50%; }
+.number3  { top: 50%; left: 90%; }
+.number6  { top: 90%; left: 50%; }
+.number9  { top: 50%; left: 10%; }
+
+.number1  { top: 18%; left: 75%; }
+.number2  { top: 30%; left: 85%; }
+.number4  { top: 70%; left: 85%; }
+.number5  { top: 82%; left: 75%; }
+.number7  { top: 82%; left: 25%; }
+.number8  { top: 70%; left: 15%; }
+.number10 { top: 30%; left: 15%; }
+.number11 { top: 18%; left: 25%; }
+
+/* Digital Information */
+.digital-info {
+    color: #f5c518;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.day {
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.battery, .date {
+    font-size: 18px;
+}
